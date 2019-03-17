@@ -1,5 +1,8 @@
 FROM php:7.2-fpm
-RUN apt-get update \
+RUN usermod -u 105 _apt \
+    && groupadd -g 101 nginx \
+    && useradd -u 100 -g 101 -s /sbin/nologin -p NP nginx \
+    && apt-get update \
     && apt-get install -yq \
         libfreetype6-dev \
         libmcrypt-dev \
