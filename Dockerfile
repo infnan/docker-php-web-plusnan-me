@@ -23,18 +23,19 @@ RUN usermod -u 105 _apt \
     && rm -rf /tmp/pear /var/cache/apt/* /var/lib/apt/*
 
 # https://roboslang.blog/post/2017-12-06-cron-docker/
+# https://stackoverflow.com/a/54356073
 
 # Add crontab file in the cron directory
 ADD crontab /etc/cron.d/cron
-
 # Give execution rights on the cron job
+RUN chown nginx:nginx /etc/cron.d/cron
 RUN chmod 0644 /etc/cron.d/cron
-
 # Apply cron job
-RUN crontab /etc/cron.d/cron
-
+RUN crontab -u nginx /etc/cron.d/cron
+RUN chmod u+s /usr/sbin/cron
 # Create the log file to be able to run tail
 RUN touch /var/log/cron.log
-
 # Run the command on container startup
-CMD cron
+#CMD cron
+
+USER nginx
