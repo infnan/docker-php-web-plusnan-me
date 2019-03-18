@@ -37,4 +37,4 @@ RUN crontab /etc/cron.d/cron
 RUN touch /var/log/cron.log
 
 # Run the command on container startup
-CMD cron
+CMD cron && tail -f /var/log/cron.log
