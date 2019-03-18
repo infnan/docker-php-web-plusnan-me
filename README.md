@@ -4,6 +4,7 @@ Php-fpm docker image used for web.plusnan.me
 ## Tags
 * `7.2`: Forked from `php:7.2-fpm`
 * `7.2-cli`: Forked from `php:7.2-cli` with `cron` installed.
+* `7.2-cron`: Forked from `php:7.2-cli` with a running `cron`.
 * `latest`: Just garbage
 
 ## Changes from the official image
