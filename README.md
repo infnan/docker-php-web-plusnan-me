@@ -10,4 +10,5 @@ Php-fpm docker image used for web.plusnan.me
 ## Changes from the official image
 * Installed some components: gd intl ldap mysqli opcache pdo_mysql soap zip redis
 * Add a user `nginx` in order to work with [nginx](https://hub.docker.com/_/nginx).
+* Set user to `nginx`.
 * `7.2-cli` has `cron` installed and the configuration file is placed at `/etc/cron.d/cron`.
