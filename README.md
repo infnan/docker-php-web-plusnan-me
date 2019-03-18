@@ -5,10 +5,11 @@ Php-fpm docker image used for web.plusnan.me
 * `7.2`: Forked from `php:7.2-fpm`
 * `7.2-cli`: Forked from `php:7.2-cli` with `cron` installed.
 * `7.2-cron`: Forked from `php:7.2-cli` with a running `cron`.
-* `latest`: Just garbage
+* `latest`: the same as `7.2`
 
 ## Changes from the official image
-* Installed some components: gd intl ldap mysqli opcache pdo_mysql soap zip redis
+* Installed some components: gd intl ldap mysqli opcache pdo_mysql soap zip redis imagick
 * Add a user `nginx` in order to work with [nginx](https://hub.docker.com/_/nginx).
 * Set user to `nginx`.
-* `7.2-cli` has `cron` installed and the configuration file is placed at `/etc/cron.d/cron`.
+* `7.2-cli` has `cron` installed and the configuration file is placed at `/etc/cron.d/cron`, but cron will not start automatically.
+* `7.2-cron`
